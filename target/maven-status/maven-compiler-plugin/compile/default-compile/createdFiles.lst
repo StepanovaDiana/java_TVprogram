@@ -1,0 +1,6 @@
+connection\ConnectionManager.class
+Entity\Channel.class
+Entity\User.class
+org\example\Main.class
+Entity\Program.class
+Entity\UserChannelList.class
