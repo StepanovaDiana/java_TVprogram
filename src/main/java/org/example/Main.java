@@ -1,7 +1,13 @@
 package org.example;
 
+import connection.ConnectionManager;
+
+import java.sql.SQLException;
+
 public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
+    public static void main(String[] args) throws SQLException {
+
+        ConnectionManager conect = new ConnectionManager();
+        conect.getConnection();
     }
 }

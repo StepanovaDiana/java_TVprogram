@@ -72,7 +72,7 @@ public class Program {
         return "Program{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", id_channel_fk=" +idChannelFk +
+                ", id_channel_fk=" + idChannelFk +
                 ", duration=" + duration +
                 ", datetime=" + datetime +
                 '}';

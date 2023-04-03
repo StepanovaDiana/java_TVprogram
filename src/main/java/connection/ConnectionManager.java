@@ -10,25 +10,18 @@ public class ConnectionManager {
     private static final String USERNAME_KEY = "postgres";
     private static final String URL_KEY = "jdbc:postgresql://localhost:5432/TVprogram";
 
-    private ConnectionManager() {
 
-    }
-
-
-    public Connection getConnection() throws SQLException {
-        Connection conn = null;
+    public Connection getConnection() {
+        Connection connection = null;
         try {
             Class.forName("java.sql.Driver");
-            conn = DriverManager.getConnection(
-                    URL_KEY,
-                    USERNAME_KEY,
-                    PASSWORD_KEY
-            );
+            connection = DriverManager.getConnection(URL_KEY, USERNAME_KEY, PASSWORD_KEY);
             System.out.println("Connection OK");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            System.out.println("Error");
         }
-        return conn;
+        return connection;
 
     }
 }
