@@ -4,9 +4,10 @@ import Dao.ProgramDao;
 import Entity.Program;
 import connection.ConnectionManager;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class ProgramService extends ConnectionManager implements ProgramDao {
     Connection connection = getConnection();
@@ -15,7 +16,7 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
     public void create(Program program) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
-        String sql = "INSERT INTO Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
+        String sql = "INSERT INTO public.Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
 
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -37,44 +38,11 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
         }
     }
 
-    @Override
-    public List<Program> getAll() throws SQLException {
-        List<Program> programList = new ArrayList<>();
-        String sql = "SELECT ID,NAME, ID_CHANNEL_FK, DURATION, DATETIME FROM PUBLIC.PROGRAM";
-        Statement statement = null;
-        try {
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next()) {
-                Program program = new Program();
-                program.setId(resultSet.getLong("ID"));
-                program.setName(resultSet.getString("NAME"));
-                program.setIdChannelFk(resultSet.getLong("ID_CHAHHEL_FK"));
-                program.setDatetime(resultSet.getDate("DATETIME"));
-                program.setDuration(resultSet.getInt("DURATION"));
-
-
-                programList.add(program);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-
-        }
-        return programList;
-    }
 
     @Override
     public Program getById(Long id) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "SELECT ID,NAME  FROM CHANNEL WHERE ID=? ";
+        String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM WHERE ID=? ";
         Program program = new Program();
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -104,14 +72,14 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
     @Override
     public void update(Program program) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "UPDATE PROGRAM SET NAME=?,DURATION=?,DATETIME=?,ID_CHANNEL_FK=0 WHERE ID=0";
+        String sql = "UPDATE public.PROGRAM SET NAME=?,DURATION=?,DATETIME=?,ID_CHANNEL_FK=?" + " WHERE ID=?";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, program.getName());
             preparedStatement.setInt(2, program.getDuration());
             preparedStatement.setDate(3, program.getDatetime());
-            //preparedStatement.setLong(4, program.getIdChannelFk());
-            //preparedStatement.setLong(5, program.getId());
+            preparedStatement.setLong(4, program.getIdChannelFk());
+            preparedStatement.setLong(5, program.getId());
 
 
             preparedStatement.executeUpdate();
@@ -129,15 +97,15 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
     }
 
     @Override
-    public void delete(Program program) throws SQLException {
+    public void delete(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM PROGRAM WHERE ID=?";
+        String sql = "DELETE FROM public.PROGRAM WHERE ID=?";
 
         try {
             preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setLong(1, program.getId());
+            preparedStatement.setLong(1, id);
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

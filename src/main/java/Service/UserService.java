@@ -4,20 +4,21 @@ import Dao.UserDao;
 import Entity.User;
 import connection.ConnectionManager;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class UserService implements UserDao {
 
-  //  Connection connection = getConnection();
+    //  Connection connection = getConnection();
 
     @Override
     public void create(User user) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "INSERT INTO public.\"user\" ( name,e_mail,password)  VALUES(?,?,?)";
 
-        try (Connection connection=ConnectionManager.getConnection()){
+        try (Connection connection = ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
@@ -31,34 +32,11 @@ public class UserService implements UserDao {
 
 
     @Override
-    public List<User> getAll() throws SQLException {
-        List<User> userList = new ArrayList<>();
-        String sql = "SELECT ID,NAME,E_MAIL,PASSWORD FROM public.\"user\"";
-        Statement statement = null;
-        try (Connection connection=ConnectionManager.getConnection()){
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next()) {
-                User user = new User();
-                user.setId(resultSet.getLong("ID"));
-                user.setName(resultSet.getString("NAME"));
-                user.setEmail(resultSet.getString("E_MAIL"));
-                user.setPassword(resultSet.getString("PASSWORD"));
-                userList.add(user);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return userList;
-    }
-
-    @Override
     public User getById(Long id) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "SELECT ID,NAME,E_MAIL,PASSWORD FROM public.\"user\" WHERE ID=?";
         User user = new User();
-        try (Connection connection=ConnectionManager.getConnection()){
+        try (Connection connection = ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
 
@@ -78,7 +56,7 @@ public class UserService implements UserDao {
     public void update(User user) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "UPDATE public.\"user\" SET NAME=?,E_MAIL=?,PASSWORD=? WHERE ID=?";
-        try(Connection connection=ConnectionManager.getConnection()) {
+        try (Connection connection = ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getName());
             preparedStatement.setString(2, user.getEmail());
@@ -92,13 +70,13 @@ public class UserService implements UserDao {
     }
 
     @Override
-    public void delete(User user) throws SQLException {
+    public void delete(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
 
         String sql = "DELETE FROM public.\"user\" WHERE ID=?";
-        try (Connection connection=ConnectionManager.getConnection()){
+        try (Connection connection = ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setLong(1, user.getId());
+            preparedStatement.setLong(1, id);
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {

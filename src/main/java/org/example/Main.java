@@ -1,15 +1,11 @@
 package org.example;
 
-import Entity.Channel;
-import Entity.Program;
 import Entity.User;
-import Entity.UserChannelList;
 import Service.ChannelService;
 import Service.ProgramService;
 import Service.UserChannelListService;
 import Service.UserService;
 
-import java.sql.Date;
 import java.sql.SQLException;
 
 public class Main {
@@ -21,12 +17,15 @@ public class Main {
         ProgramService programService= new ProgramService();
 
         User user= new User();
-        user.setName("Diana");
-        user.setEmail("sasha@gmail.com");
-        user.setPassword("12345670");
+        user.setName("SashaPr");
+        user.setEmail("sashaprot@gmail.com");
+        user.setPassword("1234567089");
+        // userService.create(user);
+        // userService.delete(3);
+        userService.update(user);
 
-        Channel channel=new Channel();
-        channel.setName("ТНТ");
+       /* Channel channel=new Channel();
+        channel.setName("стс");
 
         Program program=new Program();
         program.setName("Однажды в России");
@@ -37,9 +36,9 @@ public class Main {
         UserChannelList userChannelList=new UserChannelList();
         userChannelList.setFavorite(true);
         userChannelList.setIdUserFk(user.getId());
-        userChannelList.setIdChannelFk(channel.getId());
+        userChannelList.setIdChannelFk(channel.getId());*/
 
-        //create
+        //insert
      /* try{
             userService.create(user);
             channelService.create(channel);
@@ -50,12 +49,12 @@ public class Main {
         } catch (SQLException e){
             e.printStackTrace();
         }*/
-        //getAll
-       /* try{
-            userService.getAll();
-            channelService.getAll();
-            programService.getAll();
-            userChannelListService.getAll();
+        //update
+       /*try{
+            userService.update(user);
+            channelService.update(channel);
+            programService.update(program);
+            userChannelListService.update(userChannelList);
 
 
         } catch (SQLException e){
@@ -64,16 +63,16 @@ public class Main {
 
 
         //delete
-        try{
+        /*try{
             userService.delete(user);
             channelService.delete(channel);
             programService.delete(program);
-            userChannelListService.delete(userChannelList);
+           // userChannelListService.delete(userChannelList);
 
 
         } catch (SQLException e){
             e.printStackTrace();
-        }
+        }*/
 
 
     }

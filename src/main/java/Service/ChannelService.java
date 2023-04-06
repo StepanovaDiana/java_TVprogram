@@ -4,9 +4,10 @@ import Dao.ChannelDao;
 import Entity.Channel;
 import connection.ConnectionManager;
 
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class ChannelService extends ConnectionManager implements ChannelDao {
 
@@ -16,7 +17,7 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
     public void create(Channel channel) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
-        String sql = "INSERT INTO CHANNEL ( NAME) VALUES(?)";
+        String sql = "INSERT INTO public.CHANNEL ( NAME) VALUES(?)";
 
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -35,39 +36,11 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
         }
     }
 
-    @Override
-    public List<Channel> getAll() throws SQLException {
-        List<Channel> channelList = new ArrayList<>();
-        String sql = "SELECT ID,NAME FROM CHANNEL";
-        Statement statement = null;
-        try {
-            statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next()) {
-                Channel channel = new Channel();
-                channel.setId(resultSet.getLong("ID"));
-                channel.setName(resultSet.getString("NAME"));
-                channelList.add(channel);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (statement != null) {
-                statement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-
-        }
-        return channelList;
-    }
 
     @Override
     public Channel getById(Long id) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "SELECT ID,NAME FROM CHANNEL WHERE ID=?";
+        String sql = "SELECT ID,NAME FROM public.CHANNEL WHERE ID=?";
         Channel channel = new Channel();
         try {
             preparedStatement = connection.prepareStatement(sql);
@@ -94,7 +67,7 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
     @Override
     public void update(Channel channel) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "UPDATE CHANNEL SET NAME=? WHERE ID=?";
+        String sql = "UPDATE public.CHANNEL SET NAME=? WHERE ID=?";
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, channel.getName());
@@ -116,13 +89,13 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
     }
 
     @Override
-    public void delete(Channel channel) throws SQLException {
+    public void delete(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM CHANNEL WHERE ID=?";
+        String sql = "DELETE FROM public.CHANNEL WHERE ID=?";
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setLong(1, channel.getId());
+            preparedStatement.setLong(1, id);
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
