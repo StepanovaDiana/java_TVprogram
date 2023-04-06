@@ -7,7 +7,7 @@ public class Program {
 
     private long id;
     private String name;
-    private int idChannelFk;
+    private long id_channel_fk;
     private int duration;
     private Date datetime;
 
@@ -30,12 +30,12 @@ public class Program {
         this.name = name;
     }
 
-    public int getIdChannelFk() {
-        return idChannelFk;
+    public long getIdChannelFk() {
+        return id_channel_fk;
     }
 
-    public void setIdChannelFk(int id_channel_fk) {
-        this.idChannelFk = id_channel_fk;
+    public void setIdChannelFk(long id_channel_fk) {
+        this.id_channel_fk = id_channel_fk;
     }
 
     public int getDuration() {
@@ -59,12 +59,12 @@ public class Program {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Program program = (Program) o;
-        return id == program.id && idChannelFk == program.idChannelFk && duration == program.duration && name.equals(program.name) && datetime.equals(program.datetime);
+        return id == program.id && id_channel_fk == program.id_channel_fk && duration == program.duration && name.equals(program.name) && datetime.equals(program.datetime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, idChannelFk, duration, datetime);
+        return Objects.hash(id, name, id_channel_fk, duration, datetime);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class Program {
         return "Program{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", id_channel_fk=" + idChannelFk +
+                ", id_channel_fk=" + id_channel_fk +
                 ", duration=" + duration +
                 ", datetime=" + datetime +
                 '}';

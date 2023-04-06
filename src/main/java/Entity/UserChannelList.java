@@ -5,9 +5,9 @@ import java.util.Objects;
 public class UserChannelList {
 
     private long id;
-    private boolean isFavorite;
-    private int idUserFk;
-    private int idChannelFk;
+    private boolean is_favorite;
+    private long id_user_fk;
+    private long id_channel_fk;
 
     public UserChannelList() {
     }
@@ -21,27 +21,27 @@ public class UserChannelList {
     }
 
     public boolean isFavorite() {
-        return isFavorite;
+        return is_favorite;
     }
 
     public void setFavorite(boolean favorite) {
-        isFavorite = favorite;
+        is_favorite = favorite;
     }
 
-    public int getIdUserFk() {
-        return idUserFk;
+    public long getIdUserFk() {
+        return id_user_fk;
     }
 
-    public void setIdUserFk(int idUserFk) {
-        this.idUserFk = idUserFk;
+    public void setIdUserFk(long idUserFk) {
+        this.id_user_fk = idUserFk;
     }
 
-    public int getIdChannelFk() {
-        return idChannelFk;
+    public long getIdChannelFk() {
+        return id_channel_fk;
     }
 
-    public void setIdChannelFk(int idChannelFk) {
-        this.idChannelFk = idChannelFk;
+    public void setIdChannelFk(long idChannelFk) {
+        this.id_channel_fk = idChannelFk;
     }
 
     @Override
@@ -49,21 +49,21 @@ public class UserChannelList {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserChannelList that = (UserChannelList) o;
-        return id == that.id && isFavorite == that.isFavorite && idUserFk == that.idUserFk && idChannelFk == that.idChannelFk;
+        return id == that.id && is_favorite== that.is_favorite && id_user_fk== that.id_user_fk && id_channel_fk == that.id_channel_fk;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, isFavorite, idUserFk, idChannelFk);
+        return Objects.hash(id, is_favorite, id_user_fk, id_channel_fk);
     }
 
     @Override
     public String toString() {
         return "UserChannelList{" +
                 "id=" + id +
-                ", isFavorite=" + isFavorite +
-                ", idUserFk=" + idUserFk +
-                ", idChannelFk=" + idChannelFk +
+                ", isFavorite=" + is_favorite +
+                ", idUserFk=" + id_user_fk +
+                ", idChannelFk=" + id_channel_fk +
                 '}';
     }
 }

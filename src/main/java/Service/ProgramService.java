@@ -1,26 +1,28 @@
 package Service;
 
-import Dao.ChannelDao;
-import Entity.Channel;
+import Dao.ProgramDao;
+import Entity.Program;
 import connection.ConnectionManager;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChannelService extends ConnectionManager implements ChannelDao {
-
+public class ProgramService extends ConnectionManager implements ProgramDao {
     Connection connection = getConnection();
 
     @Override
-    public void create(Channel channel) throws SQLException {
+    public void create(Program program) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
-        String sql = "INSERT INTO CHANNEL ( NAME) VALUES(?)";
+        String sql = "INSERT INTO Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
 
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, channel.getName());
+            preparedStatement.setString(1, program.getName());
+            preparedStatement.setLong(2, program.getIdChannelFk());
+            preparedStatement.setInt(3, program.getDuration());
+            preparedStatement.setDate(4, program.getDatetime());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -36,19 +38,24 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
     }
 
     @Override
-    public List<Channel> getAll() throws SQLException {
-        List<Channel> channelList = new ArrayList<>();
-        String sql = "SELECT ID,NAME FROM CHANNEL";
+    public List<Program> getAll() throws SQLException {
+        List<Program> programList = new ArrayList<>();
+        String sql = "SELECT ID,NAME, ID_CHANNEL_FK, DURATION, DATETIME FROM PUBLIC.PROGRAM";
         Statement statement = null;
         try {
             statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery(sql);
 
             while (resultSet.next()) {
-                Channel channel = new Channel();
-                channel.setId(resultSet.getLong("ID"));
-                channel.setName(resultSet.getString("NAME"));
-                channelList.add(channel);
+                Program program = new Program();
+                program.setId(resultSet.getLong("ID"));
+                program.setName(resultSet.getString("NAME"));
+                program.setIdChannelFk(resultSet.getLong("ID_CHAHHEL_FK"));
+                program.setDatetime(resultSet.getDate("DATETIME"));
+                program.setDuration(resultSet.getInt("DURATION"));
+
+
+                programList.add(program);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -61,21 +68,24 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
             }
 
         }
-        return channelList;
+        return programList;
     }
 
     @Override
-    public Channel getById(Long id) throws SQLException {
+    public Program getById(Long id) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "SELECT ID,NAME FROM CHANNEL WHERE ID=?";
-        Channel channel = new Channel();
+        String sql = "SELECT ID,NAME  FROM CHANNEL WHERE ID=? ";
+        Program program = new Program();
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
 
             ResultSet resultSet = preparedStatement.executeQuery();
-            channel.setId(resultSet.getLong("ID"));
-            channel.setName(resultSet.getString("NAME"));
+            program.setId(resultSet.getLong("ID"));
+            program.setName(resultSet.getString("NAME"));
+            program.setIdChannelFk(resultSet.getLong("ID_CHAHHEL_FK"));
+            program.setDatetime(resultSet.getDate("DATETIME"));
+            program.setDuration(resultSet.getInt("DURATION"));
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -88,17 +98,21 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
             }
 
         }
-        return channel;
+        return program;
     }
 
     @Override
-    public void update(Channel channel) throws SQLException {
+    public void update(Program program) throws SQLException {
         PreparedStatement preparedStatement = null;
-        String sql = "UPDATE CHANNEL SET NAME=? WHERE ID=?";
+        String sql = "UPDATE PROGRAM SET NAME=?,DURATION=?,DATETIME=?,ID_CHANNEL_FK=0 WHERE ID=0";
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, channel.getName());
-            preparedStatement.setLong(2, channel.getId());
+            preparedStatement.setString(1, program.getName());
+            preparedStatement.setInt(2, program.getDuration());
+            preparedStatement.setDate(3, program.getDatetime());
+            //preparedStatement.setLong(4, program.getIdChannelFk());
+            //preparedStatement.setLong(5, program.getId());
+
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -112,17 +126,18 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
             }
 
         }
-
     }
 
     @Override
-    public void delete(Channel channel) throws SQLException {
+    public void delete(Program program) throws SQLException {
         PreparedStatement preparedStatement = null;
 
-        String sql = "DELETE FROM CHANNEL WHERE ID=?";
+        String sql = "DELETE FROM PROGRAM WHERE ID=?";
+
         try {
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setLong(1, channel.getId());
+
+            preparedStatement.setLong(1, program.getId());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -134,9 +149,7 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
             if (connection != null) {
                 connection.close();
             }
-
         }
-
-
     }
+
 }

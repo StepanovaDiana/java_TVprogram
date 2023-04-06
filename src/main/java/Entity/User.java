@@ -5,7 +5,7 @@ import java.util.Objects;
 public class User {
     private long id;
     private String name;
-    private String email;
+    private String e_mail;
     private String password;
 
     public User() {
@@ -20,7 +20,7 @@ public class User {
     }
 
     public String getEmail() {
-        return email;
+        return e_mail;
     }
 
     public String getPassword() {
@@ -36,7 +36,7 @@ public class User {
     }
 
     public void setEmail(String e_mail) {
-        this.email = e_mail;
+        this.e_mail = e_mail;
     }
 
     public void setPassword(String password) {
@@ -48,17 +48,17 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && name.equals(user.name) && email.equals(user.email) && password.equals(user.password);
+        return id == user.id && name.equals(user.name) && e_mail.equals(user.e_mail) && password.equals(user.password);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, password);
+        return Objects.hash(id, name, e_mail, password);
     }
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name='" + name + '\'' + ", e_mail='" + email + '\'' + ", password='" + password + '\'' + '}';
+        return "User{" + "id=" + id + ", name='" + name + '\'' + ", e_mail='" + e_mail + '\'' + ", password='" + password + '\'' + '}';
     }
 }
 

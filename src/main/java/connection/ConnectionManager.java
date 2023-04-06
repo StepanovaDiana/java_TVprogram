@@ -11,12 +11,12 @@ public class ConnectionManager {
     private static final String URL_KEY = "jdbc:postgresql://localhost:5432/TVprogram";
 
 
-    public Connection getConnection() {
+    public static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("java.sql.Driver");
             connection = DriverManager.getConnection(URL_KEY, USERNAME_KEY, PASSWORD_KEY);
-            System.out.println("Connection OK");
+            //System.out.println("Connection OK");
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             System.out.println("Error");
