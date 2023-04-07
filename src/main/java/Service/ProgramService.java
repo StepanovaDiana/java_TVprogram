@@ -13,7 +13,7 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
     Connection connection = getConnection();
 
     @Override
-    public void create(Program program) throws SQLException {
+    public void insert(Program program) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
         String sql = "INSERT INTO public.Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
@@ -40,7 +40,7 @@ public class ProgramService extends ConnectionManager implements ProgramDao {
 
 
     @Override
-    public Program getById(Long id) throws SQLException {
+    public Program getById(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM WHERE ID=? ";
         Program program = new Program();

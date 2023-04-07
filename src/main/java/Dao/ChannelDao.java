@@ -7,16 +7,12 @@ import java.sql.SQLException;
 public interface ChannelDao {
 
 
-    //create
-    void create(Channel channel) throws SQLException;
+    public void insert(Channel channel) throws SQLException;
 
+    public Channel getById(long id) throws SQLException;
 
-    Channel getById(Long id) throws SQLException;
-    //update
+    public void update(Channel channel) throws SQLException;
 
-    void update(Channel channel) throws SQLException;
-
-    //delete
-    void delete(long id) throws SQLException;
+    public void delete(long id) throws SQLException;
 
 }

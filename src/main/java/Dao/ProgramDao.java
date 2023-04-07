@@ -8,15 +8,12 @@ public interface ProgramDao {
 
 
     //create
-    void create(Program program) throws SQLException;
+    public void insert(Program program) throws SQLException;
 
+    public Program getById(long id) throws SQLException;
 
-    Program getById(Long id) throws SQLException;
-    //update
+    public void update(Program program) throws SQLException;
 
-    void update(Program program) throws SQLException;
-
-    //delete
-    void delete(long id) throws SQLException;
+    public void delete(long id) throws SQLException;
 
 }

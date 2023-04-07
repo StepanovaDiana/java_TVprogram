@@ -14,9 +14,8 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
     Connection connection = getConnection();
 
     @Override
-    public void create(Channel channel) throws SQLException {
-        PreparedStatement preparedStatement
-                = null;
+    public void insert(Channel channel) throws SQLException {
+        PreparedStatement preparedStatement = null;
         String sql = "INSERT INTO public.CHANNEL ( NAME) VALUES(?)";
 
         try {
@@ -38,7 +37,7 @@ public class ChannelService extends ConnectionManager implements ChannelDao {
 
 
     @Override
-    public Channel getById(Long id) throws SQLException {
+    public Channel getById(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "SELECT ID,NAME FROM public.CHANNEL WHERE ID=?";
         Channel channel = new Channel();
