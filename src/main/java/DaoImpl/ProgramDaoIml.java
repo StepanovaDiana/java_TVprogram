@@ -1,4 +1,4 @@
-package Service;
+package DaoImpl;
 
 import Dao.ProgramDao;
 import Entity.Program;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProgramService extends ConnectionManager implements ProgramDao {
+public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
     Connection connection = getConnection();
 
     @Override

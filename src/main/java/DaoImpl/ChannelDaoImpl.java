@@ -1,4 +1,4 @@
-package Service;
+package DaoImpl;
 
 import Dao.ChannelDao;
 import Entity.Channel;
@@ -9,7 +9,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ChannelService extends ConnectionManager implements ChannelDao {
+public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
 
     Connection connection = getConnection();
 
