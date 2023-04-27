@@ -16,7 +16,7 @@ public class Main {
         Channel channel=new Channel();
         channel.setName("pop");
         //channell.delete(1);
-        //channell.insert(channel);
+        channell.insert(channel);
         //channell.update(channel);
 
         Program program=new Program();

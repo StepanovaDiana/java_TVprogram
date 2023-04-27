@@ -18,20 +18,13 @@ public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
         PreparedStatement preparedStatement = null;
         String sql = "INSERT INTO public.CHANNEL ( NAME) VALUES(?)";
 
-        try {
+        try(Connection connection=ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, channel.getName());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
+            throw new RuntimeException();
         }
     }
 
@@ -40,73 +33,51 @@ public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
     public Channel getById(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "SELECT ID,NAME FROM public.CHANNEL WHERE ID=?";
-        Channel channel = new Channel();
-        try {
+        try(Connection connection=ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
-
             ResultSet resultSet = preparedStatement.executeQuery();
-            channel.setId(resultSet.getLong("ID"));
-            channel.setName(resultSet.getString("NAME"));
-            preparedStatement.executeUpdate();
+            if(resultSet.next()) {
+                Channel channel = new Channel();
+                channel.setId(resultSet.getLong("ID"));
+                channel.setName(resultSet.getString("NAME"));
+                return channel;
+            }else {
+                return null;
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-
+            throw new RuntimeException();
         }
-        return channel;
+
     }
 
     @Override
     public void update(Channel channel) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "UPDATE public.CHANNEL SET NAME=? WHERE ID=?";
-        try {
+        try(Connection connection=ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, channel.getName());
             preparedStatement.setLong(2, channel.getId());
-
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-
+            throw new RuntimeException();
         }
+
+
 
     }
 
     @Override
     public void delete(long id) throws SQLException {
         PreparedStatement preparedStatement = null;
-
         String sql = "DELETE FROM public.CHANNEL WHERE ID=?";
-        try {
+        try(Connection connection=ConnectionManager.getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
-
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (preparedStatement != null) {
-                preparedStatement.close();
-            }
-            if (connection != null) {
-                connection.close();
-            }
-
+            throw new RuntimeException();
         }
 
 
