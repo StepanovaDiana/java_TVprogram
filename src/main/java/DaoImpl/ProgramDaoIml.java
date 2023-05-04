@@ -11,6 +11,11 @@ import java.sql.SQLException;
 
 public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
 
+    private final ConnectionManager builder = new ConnectionManager();
+
+    public Connection getConnection() {
+        return builder.getConnection();
+    }
 
     @Override
     public void insert(Program program) throws SQLException {
@@ -18,7 +23,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
                 = null;
         String sql = "INSERT INTO public.Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
 
-        try(Connection connection=ConnectionManager.getConnection()) {
+        try (Connection connection = getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, program.getName());
             preparedStatement.setLong(2, program.getIdChannelFk());
@@ -37,11 +42,11 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
         PreparedStatement preparedStatement = null;
         String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM WHERE ID=? ";
 
-        try(Connection connection=ConnectionManager.getConnection()) {
+        try (Connection connection = getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
-            if(resultSet.next()) {
+            if (resultSet.next()) {
                 Program program = new Program();
                 program.setId(resultSet.getLong("ID"));
                 program.setName(resultSet.getString("NAME"));
@@ -61,7 +66,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
     public void update(Program program) throws SQLException {
         PreparedStatement preparedStatement = null;
         String sql = "UPDATE public.PROGRAM SET NAME=?,DURATION=?,DATETIME=?,ID_CHANNEL_FK=?" + " WHERE ID=?";
-        try(Connection connection=ConnectionManager.getConnection()) {
+        try (Connection connection = getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, program.getName());
             preparedStatement.setInt(2, program.getDuration());
@@ -82,7 +87,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
 
         String sql = "DELETE FROM public.PROGRAM WHERE ID=?";
 
-        try (Connection connection=ConnectionManager.getConnection()){
+        try (Connection connection = getConnection()) {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();

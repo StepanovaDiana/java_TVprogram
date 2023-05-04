@@ -1,6 +1,10 @@
-C:\Users\Диана\tvprogram\src\main\java\Entity\Channel.java
-C:\Users\Диана\tvprogram\src\main\java\Entity\Program.java
-C:\Users\Диана\tvprogram\src\main\java\Entity\User.java
-C:\Users\Диана\tvprogram\src\main\java\org\example\Main.java
-C:\Users\Диана\tvprogram\src\main\java\Entity\UserChannelList.java
-C:\Users\Диана\tvprogram\src\main\java\connection\ConnectionManager.java
+C:\Users\Диана\java\src\main\java\connection\ConnectionManager.java
+C:\Users\Диана\java\src\main\java\Dao\ProgramDao.java
+C:\Users\Диана\java\src\main\java\DaoImpl\ChannelDaoImpl.java
+C:\Users\Диана\java\src\main\java\propertiesUtil\PropertiesUtil.java
+C:\Users\Диана\java\src\main\java\Entity\Program.java
+C:\Users\Диана\java\src\main\java\servlet\TestServlet.java
+C:\Users\Диана\java\src\main\java\org\example\Main.java
+C:\Users\Диана\java\src\main\java\DaoImpl\ProgramDaoIml.java
+C:\Users\Диана\java\src\main\java\Entity\Channel.java
+C:\Users\Диана\java\src\main\java\Dao\ChannelDao.java

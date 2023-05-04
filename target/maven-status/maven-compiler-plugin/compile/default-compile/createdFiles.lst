@@ -1,6 +1,10 @@
+servlet\TestServlet.class
+Dao\ChannelDao.class
+org\example\Main.class
+Dao\ProgramDao.class
+DaoImpl\ProgramDaoIml.class
 connection\ConnectionManager.class
 Entity\Channel.class
-Entity\User.class
-org\example\Main.class
+DaoImpl\ChannelDaoImpl.class
 Entity\Program.class
-Entity\UserChannelList.class
+propertiesUtil\PropertiesUtil.class
