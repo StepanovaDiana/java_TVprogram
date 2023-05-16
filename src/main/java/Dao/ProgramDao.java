@@ -3,6 +3,7 @@ package Dao;
 import Entity.Program;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public interface ProgramDao {
 
@@ -11,6 +12,8 @@ public interface ProgramDao {
     public void insert(Program program) throws SQLException;
 
     public Program getById(long id) throws SQLException;
+
+    public List<Program> getAll() throws Exception;
 
     public void update(Program program) throws SQLException;
 

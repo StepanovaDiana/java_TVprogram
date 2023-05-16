@@ -19,7 +19,7 @@ public class ConnectionManager {
     public  Connection getConnection() {
         Connection connection = null;
         try {
-            Class.forName("java.sql.Driver");
+            Class.forName("org.postgresql.Driver");
             connection = DriverManager.getConnection(
                     PropertiesUtil.get(URL_KEY),
                     PropertiesUtil.get(USERNAME_KEY),

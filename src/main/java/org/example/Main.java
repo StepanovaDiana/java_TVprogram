@@ -1,31 +1,21 @@
 package org.example;
 
-import Entity.Channel;
-import Entity.Program;
 import DaoImpl.ChannelDaoImpl;
-import DaoImpl.ProgramDaoIml;
+import Entity.Channel;
 
-import java.sql.Date;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
 
         ChannelDaoImpl channell= new ChannelDaoImpl();
-        ProgramDaoIml programService= new ProgramDaoIml();
-        Channel channel=new Channel();
-        channel.setName("pop");
-        //channell.delete(1);
-        channell.insert(channel);
-        //channell.update(channel);
+        //ProgramDaoIml programService= new ProgramDaoIml();
+        List<Channel> channels=channell.getAll();
+        for(int i =0;i<channels.size();i++){
+            System.out.println(channels.get(i));
+        }
 
-        Program program=new Program();
-        program.setId(2);
-        program.setName("Однажды в России");
-        program.setDuration(60);
-        program.setDatetime(Date.valueOf("2022-10-17"));
-        program.setIdChannelFk(channel.getId());
-        programService.insert(program);
 
 
 

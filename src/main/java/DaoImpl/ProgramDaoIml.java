@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
 
@@ -59,6 +61,29 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
             }
         } catch (SQLException e) {
             throw new RuntimeException();
+        }
+    }
+
+    public List<Program> getAll() {
+        try (Connection connection = getConnection()) {
+            String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            List<Program> res = new ArrayList<>();
+            while (resultSet.next()) {
+                Program program = new Program();
+                program.setId(resultSet.getLong("id"));
+                program.setName(resultSet.getString("name"));
+                program.setDuration(resultSet.getInt("duration"));
+                program.setDatetime(resultSet.getDate("datetime"));
+                program.setIdChannelFk(resultSet.getLong("id_channel_fk"));
+                res.add(program);
+            }
+            return res;
+
+        } catch
+        (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 

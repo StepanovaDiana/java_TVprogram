@@ -8,6 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
 
@@ -53,6 +55,26 @@ public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
             throw new RuntimeException();
         }
 
+    }
+    @Override
+    public List<Channel> getAll() {
+        try (Connection connection = getConnection()) {
+            String sql = "SELECT ID,NAME FROM public.CHANNEL";
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            List<Channel> res = new ArrayList<>();
+            while (resultSet.next()) {
+                Channel channel = new Channel();
+                channel.setId(resultSet.getLong("id"));
+                channel.setName(resultSet.getString("name"));
+                res.add(channel);
+            }
+            return res;
+
+        } catch
+        (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

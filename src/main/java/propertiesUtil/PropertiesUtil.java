@@ -5,7 +5,6 @@ import java.util.Properties;
 
 public class PropertiesUtil {
     private static final Properties PROPERTIES = new Properties();
-
     private PropertiesUtil() {
     }
 
@@ -22,7 +21,7 @@ public class PropertiesUtil {
     }
 
     private static void loadProperties() throws IOException {
-        try (var inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("database.properties")) {
+        try (var inputStream = PropertiesUtil.class.getClassLoader().getResourceAsStream("up.properties")) {
             PROPERTIES.load(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);

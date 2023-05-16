@@ -1,10 +1,13 @@
-servlet\TestServlet.class
 Dao\ChannelDao.class
-org\example\Main.class
+service\ChannelService.class
 Dao\ProgramDao.class
-DaoImpl\ProgramDaoIml.class
 connection\ConnectionManager.class
-Entity\Channel.class
 DaoImpl\ChannelDaoImpl.class
+service\ProgramService.class
 Entity\Program.class
+servlet\ChannelServlet.class
+org\example\Main.class
+DaoImpl\ProgramDaoIml.class
+Entity\Channel.class
+servlet\ProgramServlet.class
 propertiesUtil\PropertiesUtil.class

@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="tvprogram:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4e73b729-d8a9-4e87-b329-574cf9969d83" name="Changes" comment="servlet">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/ChannelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/ChannelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Dao/ProgramDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/ProgramDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DaoImpl/ProgramDaoIml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoImpl/ProgramDaoIml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/propertiesUtil/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertiesUtil/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/TestServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/up.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/ChannelDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/ChannelDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Dao/ProgramDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/ProgramDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DaoImpl/ChannelDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DaoImpl/ChannelDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DaoImpl/ProgramDaoIml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DaoImpl/ProgramDaoIml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/connection/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/connection/ConnectionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/propertiesUtil/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/propertiesUtil/PropertiesUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/up.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ChannelDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ChannelDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ProgramDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ProgramDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ChannelDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ChannelDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ProgramDaoIml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ProgramDaoIml.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/connection/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/connection/ConnectionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/org/example/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/propertiesUtil/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/propertiesUtil/PropertiesUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/servlet/TestServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/up.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2NQ9Ko5LnS1rkweGcBKswAHF5Jr" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TODO_SCOPE": "All Places",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Диана/java",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="tvprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.8" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="tvprogram:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/tvprogram_war_exploded" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="f45d5970-bd02-4540-a3b1-3a7e83ea17d4" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="56595" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="tvprogram:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Tomcat Server.Tomcat" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4e73b729-d8a9-4e87-b329-574cf9969d83" name="Changes" comment="" />
+      <created>1679585380511</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679585380511</updated>
+      <workItem from="1679585381278" duration="3232000" />
+      <workItem from="1680010029833" duration="1901000" />
+      <workItem from="1680012048600" duration="27000" />
+      <workItem from="1680012163904" duration="244000" />
+      <workItem from="1680012419079" duration="17000" />
+      <workItem from="1680104625820" duration="274000" />
+      <workItem from="1680104934215" duration="22667000" />
+      <workItem from="1680793659756" duration="4829000" />
+      <workItem from="1680863170623" duration="5596000" />
+      <workItem from="1681456733588" duration="2769000" />
+      <workItem from="1682615562598" duration="1920000" />
+      <workItem from="1683217661868" duration="3750000" />
+      <workItem from="1683225615722" duration="6964000" />
+      <workItem from="1683479432386" duration="9317000" />
+    </task>
+    <task id="LOCAL-00001" summary="dao and service">
+      <created>1680531848633</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680531848633</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dao and service">
+      <created>1680794919125</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680794919125</updated>
+    </task>
+    <task id="LOCAL-00003" summary="dao and service">
+      <created>1680806226457</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680806226457</updated>
+    </task>
+    <task id="LOCAL-00004" summary="dao and service">
+      <created>1680873925515</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680873925515</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dao and service">
+      <created>1680874147841</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680874147841</updated>
+    </task>
+    <task id="LOCAL-00006" summary="dao and daoimpl">
+      <created>1681457049330</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681457049330</updated>
+    </task>
+    <task id="LOCAL-00007" summary="dao and daoimpl">
+      <created>1682616784539</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1682616784539</updated>
+    </task>
+    <task id="LOCAL-00008" summary="servlet">
+      <created>1683225549975</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683225549975</updated>
+    </task>
+    <task id="LOCAL-00009" summary="servlet">
+      <created>1683225713890</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683225713890</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="6626595d-6005-4bf0-8109-0bf4b8a6b9eb">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="dao and service" />
+    <MESSAGE value="dao and daoimpl" />
+    <MESSAGE value="servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="servlet" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/service/ChannelService.java</url>
+          <line>29</line>
+          <properties class="service.ChannelService" method="getAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/servlet/ChannelServlet.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
