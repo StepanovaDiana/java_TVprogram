@@ -10,15 +10,50 @@
 <html>
 <head>
     <title>TVprogram</title>
+    <style>
+        body{
+
+            background-color:#5F9EA0;
+            color: #FFFFFF;
+            font-family: Calibri;
+            font-style: normal;
+            text-align: center;
+
+        }
+
+        li{
+            line-height: 0.5;
+            float: left;
+        }
+        ul{
+            font-size: 1.5rem;
+            list-style: square outside;
+            display: table;
+            margin: 0 auto;
+        }
+
+        a{
+            color: #FFFFFF;
+            text-decoration: none;/*убирает подчеркивание*/
+        }
+    </style>
 
 </head>
 <body>
-<h1>Каналы</h1>
-<div>
+<header>
+    <ul>
+        <li><a href="ChannelServlet?action=list"></a></li>
+    </ul>
+</header>
+
+<h1 style="font-size: 50px">Каналы</h1>
+<div style="margin-top: -25px">
     <c:forEach items="${channelList}" var="channel">
         <ul>
             <li>
-                <p><a href="<%=request.getContextPath()%>/program"><c:out value="${channel.getName()}"></c:out> </a></p>
+                <p><c:out value="${channel.getName()}"></c:out> </p>
+                <p><a href="/tvprogram_war_exploded/?action=program&id=<c:out value="${channel.getId()}"/> "> Program</a></p>
+
             </li>
         </ul>
     </c:forEach>

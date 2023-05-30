@@ -10,36 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e73b729-d8a9-4e87-b329-574cf9969d83" name="Changes" comment="servlet">
+      <change beforePath="$PROJECT_DIR$/WEB-INF/channel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/WEB-INF/channel.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/ChannelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/ChannelDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Dao/ProgramDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Dao/ProgramDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DaoImpl/ProgramDaoIml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DaoImpl/ProgramDaoIml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/propertiesUtil/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/propertiesUtil/PropertiesUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/TestServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/up.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Entity/Channel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Entity/Channel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ProgramService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ProgramService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ChannelServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ChannelServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/servlet/ProgramServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/servlet/ProgramServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Dao/ChannelDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/ChannelDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Dao/ProgramDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Dao/ProgramDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DaoImpl/ChannelDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DaoImpl/ChannelDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/DaoImpl/ProgramDaoIml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DaoImpl/ProgramDaoIml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/connection/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/connection/ConnectionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/propertiesUtil/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/propertiesUtil/PropertiesUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/servlet/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/up.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ChannelDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ChannelDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Entity/Channel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Entity/Channel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/ChannelService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/ChannelService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/service/ProgramService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/service/ProgramService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/servlet/ProgramServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/servlet/ProgramServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/channel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/channel.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ProgramDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Dao/ProgramDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ChannelDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ChannelDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ProgramDaoIml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/DaoImpl/ProgramDaoIml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/connection/ConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/connection/ConnectionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/org/example/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/org/example/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/propertiesUtil/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/propertiesUtil/PropertiesUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/servlet/TestServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/up.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/up.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Entity/Channel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/Entity/Channel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/service/ProgramService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/service/ProgramService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/servlet/ProgramServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tvprogram-1.0-SNAPSHOT/WEB-INF/classes/servlet/ProgramServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +79,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NQ9Ko5LnS1rkweGcBKswAHF5Jr" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -94,38 +89,105 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "TODO_SCOPE": "All Places",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Диана/java",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;All Places&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Диана/java&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+    <configuration name="ChannelTest.deleteChannelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="tvprogram" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="crud.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="crud" />
+      <option name="MAIN_CLASS_NAME" value="crud.ChannelTest" />
+      <option name="METHOD_NAME" value="deleteChannelTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChannelTest.getAllChannelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tvprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="crud" />
+      <option name="MAIN_CLASS_NAME" value="crud.ChannelTest" />
+      <option name="METHOD_NAME" value="getAllChannelTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChannelTest.getByChannelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tvprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="crud" />
+      <option name="MAIN_CLASS_NAME" value="crud.ChannelTest" />
+      <option name="METHOD_NAME" value="getByChannelTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChannelTest.insertChannelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tvprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="crud" />
+      <option name="MAIN_CLASS_NAME" value="crud.ChannelTest" />
+      <option name="METHOD_NAME" value="insertChannelTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChannelTest.updateChannelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tvprogram" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="crud.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="crud" />
+      <option name="MAIN_CLASS_NAME" value="crud.ChannelTest" />
+      <option name="METHOD_NAME" value="updateChannelTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -218,12 +280,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ChannelTest.deleteChannelTest" />
+      <item itemvalue="JUnit.ChannelTest.getAllChannelTest" />
+      <item itemvalue="JUnit.ChannelTest.getByChannelTest" />
+      <item itemvalue="JUnit.ChannelTest.insertChannelTest" />
+      <item itemvalue="JUnit.ChannelTest.updateChannelTest" />
       <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ChannelTest.insertChannelTest" />
+        <item itemvalue="JUnit.ChannelTest.updateChannelTest" />
+        <item itemvalue="JUnit.ChannelTest.deleteChannelTest" />
+        <item itemvalue="JUnit.ChannelTest.getAllChannelTest" />
+        <item itemvalue="JUnit.ChannelTest.getByChannelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +318,9 @@
       <workItem from="1682615562598" duration="1920000" />
       <workItem from="1683217661868" duration="3750000" />
       <workItem from="1683225615722" duration="6964000" />
-      <workItem from="1683479432386" duration="9317000" />
+      <workItem from="1683479432386" duration="10954000" />
+      <workItem from="1684232543056" duration="24832000" />
+      <workItem from="1684997532761" duration="3067000" />
     </task>
     <task id="LOCAL-00001" summary="dao and service">
       <created>1680531848633</created>
@@ -313,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683225713890</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="servlet">
+      <created>1684232898059</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684232898059</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -351,28 +430,27 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/service/ChannelService.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/crud/ChannelTest.java</url>
           <line>29</line>
-          <properties class="service.ChannelService" method="getAll">
+          <properties class="crud.ChannelTest" method="updateChannelTest">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/crud/ChannelTest.java</url>
+          <line>23</line>
+          <properties class="crud.ChannelTest" method="deleteChannelTest">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/DaoImpl/ChannelDaoImpl.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/connection/ConnectionManager.java</url>
-          <line>21</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/servlet/ChannelServlet.java</url>
+          <url>file://$PROJECT_DIR$/src/test/java/crud/ChannelTest.java</url>
           <line>19</line>
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
