@@ -17,7 +17,7 @@ public class ChannelTest {
     @Test
     public void insertChannelTest()throws  Exception{
         initChannel();
-        channelDao.getById(c.getId()).getName();
+        //channelDao.getById(c.getId()).getName();
         assertEquals(c.getId(),channelDao.getById(c.getId()).getId());
     }
     @Test
@@ -48,7 +48,9 @@ public class ChannelTest {
 
     void initChannel() throws SQLException{
         c.setName("музтв");
+        c.setId(1);
         Channel channel=channelDao.insert(c);
+        //c.setId(channel.getId());
         channelDao.insert(channel);
 
     }
