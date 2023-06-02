@@ -37,9 +37,16 @@ public class ProgramService {
     }
 
 
-    public List<Program> getAll(long channelId){
+    public List<Program> getAllForChannel(long channelId){
         try{
             return programDaoIml.getAllForChannel( channelId);
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public List<Program> getAll(){
+        try{
+            return programDaoIml.getAll();
         }catch (Exception e) {
             throw new RuntimeException(e);
         }

@@ -26,29 +26,31 @@ public class ChannelDaoImpl extends ConnectionManager implements ChannelDao {
 
 
         try (Connection connection = getConnection()) {
-            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql,  new String[]{"id"});
             preparedStatement.setString(1, channel.getName());
-
             preparedStatement.executeUpdate();
+            var generetedKey = preparedStatement.getGeneratedKeys();
+            generetedKey.next();
+            channel.setId(generetedKey.getLong("id"));
+            return channel;
+
         } catch (SQLException e) {
             throw new RuntimeException();
         }
-        return channel;
     }
 
 
     @Override
     public Channel getById(long id) throws SQLException {
-
+        PreparedStatement preparedStatement = null;
+        String sql = "SELECT ID,NAME FROM public.CHANNEL WHERE ID=?";
         try (Connection connection = getConnection()) {
-            PreparedStatement preparedStatement = null;
-            String sql = "SELECT ID,NAME FROM public.CHANNEL WHERE ID=?";
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setLong(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
                Channel ch = new Channel();
-                ch.setId(resultSet.getLong("idChannel"));
+                ch.setId(resultSet.getLong("id"));
                 ch.setName(resultSet.getString("name"));
                 return ch;
             }  else {

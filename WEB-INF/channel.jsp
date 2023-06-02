@@ -45,7 +45,6 @@
         <li><a href="ChannelServlet?action=list"></a></li>
     </ul>
 </header>
-
 <h1 style="font-size: 50px">Каналы</h1>
 <div style="margin-top: -25px">
     <c:forEach items="${channelList}" var="channel">

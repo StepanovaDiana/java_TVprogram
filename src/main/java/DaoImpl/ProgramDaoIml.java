@@ -4,10 +4,7 @@ import Dao.ProgramDao;
 import Entity.Program;
 import connection.ConnectionManager;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,22 +17,51 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
     }
 
     @Override
-    public void insert(Program program) throws SQLException {
+    public Program insert(Program program) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
         String sql = "INSERT INTO public.Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
 
         try (Connection connection = getConnection()) {
-            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql,  new String[]{"id"});
             preparedStatement.setString(1, program.getName());
             preparedStatement.setLong(2, program.getIdChannelFk());
             preparedStatement.setInt(3, program.getDuration());
             preparedStatement.setDate(4, program.getDatetime());
-
             preparedStatement.executeUpdate();
+            var generetedKey = preparedStatement.getGeneratedKeys();
+            generetedKey.next();
+            program.setId(generetedKey.getLong("id"));
+            return program;
+
+
+
         } catch (SQLException e) {
             throw new RuntimeException();
         }
+
+    }
+
+    public List<Program> getAll() {
+        List<Program> programs = new ArrayList<>();
+        String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM";
+        try (Connection connection = getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Program p = new Program();
+                p.setId(resultSet.getLong("ID"));
+                p.setName(resultSet.getString("NAME"));
+                p.setIdChannelFk(resultSet.getLong("ID_CHANNEL_FK"));
+                p.setDatetime(resultSet.getDate("DATETIME"));
+                p.setDuration(resultSet.getInt("DURATION"));
+                programs.add(p);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return programs;
     }
 
 
@@ -52,7 +78,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
                 Program program = new Program();
                 program.setId(resultSet.getLong("ID"));
                 program.setName(resultSet.getString("NAME"));
-                program.setIdChannelFk(resultSet.getLong("ID_CHAHHEL_FK"));
+                program.setIdChannelFk(resultSet.getLong("ID_CHANNEL_FK"));
                 program.setDatetime(resultSet.getDate("DATETIME"));
                 program.setDuration(resultSet.getInt("DURATION"));
                 return program;
@@ -66,9 +92,11 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
 
     public List<Program> getAllForChannel(long channelId) {
         try (Connection connection = getConnection()) {
-            String sql = "SELECT p.ID,p.NAME,p.DURATION,p.DATETIME,p.ID_CHANNEL_FK FROM public.PROGRAM p join public.channel c on c.id=p.id_channel_fk  order by DATETIME";
+            String sql = "SELECT p.ID,p.NAME,p.DURATION,p.DATETIME, p.id_channel_fk FROM public.PROGRAM p where p.id_channel_fk=? order by p.DATETIME";
             PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1, channelId);
             ResultSet resultSet = statement.executeQuery();
+
             List<Program> res = new ArrayList<>();
             while (resultSet.next()) {
                 Program program = new Program();
@@ -98,8 +126,6 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
             preparedStatement.setDate(3, program.getDatetime());
             preparedStatement.setLong(4, program.getIdChannelFk());
             preparedStatement.setLong(5, program.getId());
-
-
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException();

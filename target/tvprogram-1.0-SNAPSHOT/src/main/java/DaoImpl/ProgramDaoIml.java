@@ -20,7 +20,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
     }
 
     @Override
-    public void insert(Program program) throws SQLException {
+    public Program insert(Program program) throws SQLException {
         PreparedStatement preparedStatement
                 = null;
         String sql = "INSERT INTO public.Program ( NAME, ID_CHANNEL_FK, DURATION, DATETIME)" + "VALUES(?,?,?,?)";
@@ -36,7 +36,31 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
         } catch (SQLException e) {
             throw new RuntimeException();
         }
+        return program;
     }
+
+    public List<Program> getAll() {
+        List<Program> programs = new ArrayList<>();
+        String sql = "SELECT ID,NAME,DURATION,DATETIME,ID_CHANNEL_FK FROM public.PROGRAM";
+        try (Connection connection = getConnection()) {
+            PreparedStatement statement = connection.prepareStatement(sql);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                Program p = new Program();
+               p.setId(resultSet.getLong("ID"));
+                p.setName(resultSet.getString("NAME"));
+               p.setIdChannelFk(resultSet.getLong("ID_CHANNEL_FK"));
+                p.setDatetime(resultSet.getDate("DATETIME"));
+                p.setDuration(resultSet.getInt("DURATION"));
+                programs.add(p);
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return programs;
+    }
+
 
 
     @Override
@@ -52,7 +76,7 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
                 Program program = new Program();
                 program.setId(resultSet.getLong("ID"));
                 program.setName(resultSet.getString("NAME"));
-                program.setIdChannelFk(resultSet.getLong("ID_CHAHHEL_FK"));
+                program.setIdChannelFk(resultSet.getLong("ID_CHANNEL_FK"));
                 program.setDatetime(resultSet.getDate("DATETIME"));
                 program.setDuration(resultSet.getInt("DURATION"));
                 return program;
@@ -66,9 +90,11 @@ public class ProgramDaoIml extends ConnectionManager implements ProgramDao {
 
     public List<Program> getAllForChannel(long channelId) {
         try (Connection connection = getConnection()) {
-            String sql = "SELECT p.ID,p.NAME,p.DURATION,p.DATETIME,p.ID_CHANNEL_FK FROM public.PROGRAM p join public.channel c on c.id=p.id_channel_fk  order by DATETIME";
+            String sql = "SELECT p.ID,p.NAME,p.DURATION,p.DATETIME, p.id_channel_fk FROM public.PROGRAM p where p.id_channel_fk=? order by p.DATETIME";
             PreparedStatement statement = connection.prepareStatement(sql);
+            statement.setLong(1,channelId);
             ResultSet resultSet = statement.executeQuery();
+
             List<Program> res = new ArrayList<>();
             while (resultSet.next()) {
                 Program program = new Program();

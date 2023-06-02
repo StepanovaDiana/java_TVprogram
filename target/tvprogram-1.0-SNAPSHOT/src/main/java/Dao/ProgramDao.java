@@ -9,7 +9,7 @@ public interface ProgramDao {
 
 
     //create
-    public void insert(Program program) throws SQLException;
+    public Program insert(Program program) throws SQLException;
 
     public Program getById(long id) throws SQLException;
 
